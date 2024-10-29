@@ -1,0 +1,21 @@
+.genBtn{
+    background: linear-gradient(45deg,rgb(213, 91, 220),rgb(213, 91, 220));
+    padding: 1rem;
+    font-weight: bolder;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: .3rem;
+    margin: 0 0 2rem 0;
+}
+
+.downloadBtnC{
+    background: linear-gradient(45deg,rgb(115, 220, 91),rgb(19, 205, 168));
+    padding: 1rem;
+    font-weight: bolder;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: .3rem;
+    margin: 0 0 2rem 0;
+}

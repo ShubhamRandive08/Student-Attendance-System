@@ -1,0 +1,10 @@
+.viewAtt{
+    background: linear-gradient(45deg,rgb(34, 24, 175),rgb(44, 203, 108));
+    padding: 1rem;
+    /* font-weight: bolder; */
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: .3rem;
+    margin: 0 0 3rem ;
+}

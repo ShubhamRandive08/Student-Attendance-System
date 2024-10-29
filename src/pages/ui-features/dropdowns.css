@@ -1,0 +1,27 @@
+.inputResult{
+    font-size: 1rem;
+    width: 90%;
+    /* border: .01rem solid black; */
+    padding: 0 0 0 .2rem;
+    text-transform: uppercase;
+    border: none;
+
+}
+
+.saveBtn{
+    width: 70%;
+    display: block;
+    margin: auto;
+    background: rgb(69, 188, 69);
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    color: black;
+    padding: .7rem;
+    box-shadow: 0 0  1rem black;
+}
+
+.saveBtn:hover{
+    /* opacity: .8; */
+    transition: .5s;
+}
