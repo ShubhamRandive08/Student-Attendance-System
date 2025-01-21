@@ -27,15 +27,12 @@
 
   <script>
     function validation() {
-
       const prn = document.getElementById('exampleInputPRN').value;
       const pass = document.getElementById('exampleInputPassword1').value;
-
       const Ldata = {
         "prn": prn,
         "pass": pass
       }
-
       if (prn == '' || pass == '') {
         alert('Please Enter All Details.')
       } else {
@@ -44,7 +41,6 @@
             const sts1 = responce.data.message
             const sts2 = responce.data.status
             console.log(responce.data)
-
             if (sts2 == '200') {
               alert(sts1)
               localStorage.setItem('prn',prn);
@@ -100,8 +96,6 @@
                   <a href="#" class="auth-link text-primary">Forgot password?</a>
                 </div>
                 <div class="mb-2 d-grid gap-2">
-                  <!-- <button type="button" class="btn btn-block btn-facebook auth-form-btn"> -->
-                  <!-- <i class="mdi mdi-facebook me-2"></i>Connect using facebook </button> -->
                 </div>
                 <div class="text-center mt-4 font-weight-light"> ADMIN LOGIN <a href="login.html"
                     class="text-primary">LOGIN</a>

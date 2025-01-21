@@ -38,31 +38,20 @@
 
       function prn(){
         const prn = localStorage.getItem('prn');
-        // console.log(prn)
-        // alert(prn)
-
         const data = {
           "prn" : prn
         }
 
         axios.post('http://localhost:5000/infoByPRN',data)
         .then(responce =>{
-          // console.log(responce.data.report[0].name)
-          // console.log(responce.data.report)
-          // alert(responce.data.report[0].name)
-          // alert(responce.data.report[0].prn)
-
           document.getElementById('name').innerHTML = "Welcome   " + responce.data.report[0].name
           document.getElementById('prn').innerHTML = responce.data.report[0].prn
         })
 
         axios.post('http://localhost:5000/allStudInfo',data)
         .then(responce =>{
-          // console.log(responce.data)
-
           const l = responce.data.message[0];
           console.log(l)
-            //   console.log(responce.data.posts.post);
 
             var rowData = "<tr><td>" + l.prn + "</td>";
             rowData += "<td>" + l.class_id + "</td>";
@@ -84,13 +73,8 @@
       <!-- partial:../../partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-          <!-- <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../assets/images/logo.svg" alt="logo" /></a>
-          <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a> -->
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
-          <!-- <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="mdi mdi-menu"></span>
-          </button> -->
           <div class="search-field d-none d-md-block">
             <form class="d-flex align-items-center h-100" action="#">
               <div class="input-group">
@@ -103,10 +87,6 @@
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                <!-- <div class="nav-profile-img">
-                  <img src="../../assets/images/faces/face1.jpg" alt="image">
-                  <span class="availability-status online"></span>
-                </div> -->
                 <div class="nav-profile-text"> 
                   <b><p class="mb-1 text-black" id="name"></p></b>
                 </div>
@@ -140,10 +120,6 @@
         <!-- partial:../../partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
-           
-            
-            
-            
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
                 <span class="menu-title">STUDENT CORNER</span>

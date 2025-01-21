@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
   <!-- JQuery CDN -->
-  <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <!-- JQuery CDN -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -31,7 +31,6 @@
   <script>
     function goback() {
       let r = confirm('Are you sure to logout?');
-
       if (r == true)
         window.location.href = "../../pages/samples/login.html";
       else
@@ -39,21 +38,15 @@
     }
 
     function contact() {
-      // alert("Page Loaded");
-
       const mid = document.getElementById("mid").value;
-      // alert(mid)
-
       const data = {
         "prn": mid
       }
 
       axios.post("http://localhost:5000/infoByPRN", data)
         .then(responce => {
-          // console.log(responce.data);
           let l = responce.data.report;
           let sts = responce.data.stutas
-          // console.log(l.length)
           console.log(l);
 
           if (sts == '200') {
@@ -61,14 +54,11 @@
             rowData += "<td>" + l[0].name + "</td>";
             rowData += "<td>" + l[0].dob + "</td>";
             rowData += "<td>" + l[0].pass + "</td>";
-            // rowData +="<td><input type='button' value='Delete' class='btn btn-danger' onclick='del("+l[i].S_ID+")'></td>";
             rowData += "</tr>";
             $('#dt').append(rowData);
           } else {
             alert('Invalid PRN no.')
           }
-
-          // }
         })
     }
   </script>
@@ -83,9 +73,6 @@
           <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a> -->
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
-        <!-- <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="mdi mdi-menu"></span>
-          </button> -->
         <div class="search-field d-none d-md-block">
           <form class="d-flex align-items-center h-100" action="#">
             <div class="input-group">
@@ -99,10 +86,6 @@
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown"
               aria-expanded="false">
-              <!-- <div class="nav-profile-img">
-                  <img src="../../assets/images/faces/face1.jpg" alt="image">
-                  <span class="availability-status online"></span>
-                </div> -->
               <div class="nav-profile-text">
                 <b>
                   <p class="mb-1 text-black">Student Attendance Managament System</p>

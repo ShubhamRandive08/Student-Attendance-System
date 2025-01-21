@@ -14,6 +14,7 @@ const pool = new Pool({
 //Test the connection(This is optional)
 pool.connect((err,client,release)=>{
     if(err){
+        // console.log(err);
         return console.error('Error aquiring client', err.stack);
     }
 

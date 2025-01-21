@@ -40,15 +40,9 @@
     }
 
     function contact() {
-      // alert("Page Loaded");
-
       axios.get("")
         .then(responce => {
-          // console.log(responce.data);
-          // let l=responce.data.posts.post;
-          //    console.log(l.length);
           for (let i = 0; i < l.length; i++) {
-            //   console.log(responce.data.posts.post);
             var rowData = "<tr><td>" + l[i].S_ID + "</td>";
             rowData += "<td>" + l[i].Name + "</td>";
             rowData += "<td>" + l[i].Address + "</td>";
@@ -63,38 +57,23 @@
 
     function prn() {
       const prn = localStorage.getItem('prn');
-      // console.log(prn)
-      // alert(prn)
-
       const data = {
         "prn": prn
       }
 
       axios.post('http://localhost:5000/infoByPRN', data)
         .then(responce => {
-          // console.log(responce.data.report[0].name)
-          // alert(responce.data.report[0].name)
-
           document.getElementById('name').innerHTML = "Welcome   " + responce.data.report[0].name
         })
 
         axios.post('http://localhost:5000/gen_report_att',data)
         .then(responce =>{
-          // console.log(responce.data)
-          // console.log(responce.data);
           let l = responce.data.report;
           let d = responce.data.stutas
-
-
-
           for (let i = 0; i < l.length; i++) {
-            //   console.log(responce.data.posts.post);
-
             var rowData = "<tr><td>" + l[i].att_date + "</td>";
             rowData += "<td>" + l[i].stutas + "</td>";
-            // rowData += "<td><input type='button' value='DOWNLOAD' class='btn btn-success' onclick='del(" + l[i].S_ID + ")'>  </td>";
             rowData += "</tr>";
-
             $('#dt').append(rowData);
 
           }

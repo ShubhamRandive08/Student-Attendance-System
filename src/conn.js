@@ -27,6 +27,7 @@ app.get('/stud_data', [], async (req, res) => {
         const result = await pool.query('select * from register_student')
         let count = result.rows.length ;
         res.json({ stutas: '200', message: 'success', studData: result.rows, cnt : count })
+        // console.log(result)
     } catch (err) {
         console.error(err.message)
         res.status(500).withMessage('Server Error')
@@ -90,7 +91,7 @@ app.post('/loginStudent', [
             if (r.rows.length > 0) {
                 const result = await pool.query('select prn,class_id,name from register_student where prn = $1 and pass = $2', [prn, pass])
 
-                res.json({ status: '200', message: 'Login Success', data: result.rows })
+                res.json({ status: '200', message: 'Login Success', data :  result.rows })
             } else {
                 res.json({ status: '400', message: 'Invalid Credintials' })
             }
